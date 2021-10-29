@@ -1,0 +1,30 @@
+{
+  "list-context.image-list#upmedal": {
+    "children": [
+      "slider-layout#upmedal-images"
+    ],
+    "props": {
+      "height": 300,
+      "images": [
+        {
+          "image": "assets/img/BANNER-WOOD.png"
+        },
+        {
+          "image": "assets/img/BANNER-GUERREIROS.png"
+        }
+      ]
+    }
+  },
+  "slider-layout#upmedal-images": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    }
+  }
+}

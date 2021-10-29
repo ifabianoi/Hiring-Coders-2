@@ -1,0 +1,123 @@
+.paragraph--departament-title {
+  font-weight: 600;
+  font-size: 3rem;
+  color: #002740;
+}
+.paragraph--copyright {
+  color: #fff;
+  font-size: 14px;
+}
+
+.paragraph--partnes-alignment {
+  margin-left: 110px;
+}
+
+/* footer */
+
+.link--rich-email {
+  margin: 12%;
+  color: #5974c7;
+}
+.paragraph--rich-email {
+  margin-top: 0%;
+}
+.paragraph--textoInterno {
+  margin-top: -97px;
+  margin-left: 18%;
+  margin-right: 18%;
+  padding: 1px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.paragraph--title-footer {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "Open Sans Condensed",sans-serif;
+  line-height: 1.3;
+}
+.paragraph--Brasil-end-1 {
+  font-size: 0.9rem !important;
+  color: #222;
+  box-sizing: inherit;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Open Sans",sans-serif;
+}
+.paragraph--Brasil-end-2 {
+  font-size: 0.9rem !important;
+  color: #222;
+  box-sizing: inherit;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Open Sans",sans-serif;
+}
+.paragraph--Espanha-end {
+  font-size: 0.9rem !important;
+  color: #222;
+  box-sizing: inherit;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Open Sans",sans-serif;
+}
+.paragraph--EstadosUnidos-end {
+  font-size: 0.9rem !important;
+  color: #222;
+  box-sizing: inherit;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Open Sans", sans-serif;
+}
+.strong--title-slogan {
+  color: #fcc200
+}
+
+.wrapper--title-slogan {
+  color: #040404;
+  font-size: 1.5rem;
+  line-height: 0.5em;
+  font-family: "Open Sans Condensed",sans-serif;
+  margin-top: 140px;
+  margin-bottom: 50px;
+}
+
+.wrapper--text-slogan {
+  font-size: 18px !important;
+  text-align: left;
+  line-height: 0.5px;
+  color: #040404;
+  padding-left:5%;
+  padding-right: 5%;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.wrapper--button-about-us {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 1em 2em;
+  background: transparent;
+  border: 2px solid #5974c7;
+  color: #5974c7 !important;
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
+  border-radius: 0em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+
+@media (max-width: 1024px){
+  .wrapper--title-slogan {
+    line-height: 2em;
+  }
+
+}
+@media(min-width: 1440px){
+  .wrapper--text-slogan {
+    width: 66vw;
+    padding: 0;
+  }
+}

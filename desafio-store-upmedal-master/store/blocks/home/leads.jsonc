@@ -1,0 +1,17 @@
+{
+    "store.custom#leads": {
+        "blocks": [
+            "flex-layout.row#leads"
+        ]
+    },
+    "flex-layout.row#leads": {
+        "children": [
+            "flex-layout.col#leads"
+        ]
+    },
+    "flex-layout.col#leads": {
+        "children": [
+            "formleads"
+        ]
+    }    
+}

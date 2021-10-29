@@ -1,0 +1,7 @@
+.wrapper--stuck{
+    height: 0px;
+}
+.wrapper {
+    height: 0px;
+    background-color: #303030;
+}

@@ -1,0 +1,36 @@
+.sliderLayoutContainer {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+    background-color: #303030;
+}
+
+.caretIcon {
+    position: relative;
+    color: #ffffff;
+}
+
+.sliderArrows--carousel {
+    margin: 130px;
+    padding-top: 350px;
+}
+
+.sliderArrows--products {
+    margin: 130px;
+    padding-top: 500px;
+}
+
+.paginationDot--isActive {
+    background-color: #59ff00;
+}
+
+.paginationDotsContainer--products {
+    padding-top: 50px;
+    padding-bottom: 18px;
+}
+
+.sliderLayoutContainer--products {
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-right: 50px;
+}

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+$breakpoints: (
+	small:	480px,
+	medium: 640px,
+	large: 	820px
+);
+
+$breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 1024px
+) !default;
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)'
+) !default;
+
+$unit-intervals: (
+  'px': 1,
+  'em': 0.01,
+  'rem': 0.1,
+  '': 0
+) !default;
+
+$im-media-support: true !default;
+
+$im-no-media-breakpoint: 'desktop' !default;
+
+$im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
+
+@function im-intercepts-static-breakpoint($conditions...) {
+  $no-media-breakpoint-value: map-get($breakpoints, $im-no-media-breakpoint);
+
+  @if not $no-media-breakpoint-value {
+    @if im-log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {}
+  }
+
+  @each $condition in $conditions {
+    @if not map-has-key($media-expressions, $condition) {
+      $operator: get-expression-operator($condition);
+      $prefix: get-expression-prefix($operator);
+      $value: get-expression-value($condition, $operator);
+
+      @if ($prefix == 'max' and $value <= $no-media-breakpoint-value) or
+          ($prefix == 'min' and $value > $no-media-breakpoint-value) {
+        @return false;
+      }
+    } @else if not index($im-no-media-expressions, $condition) {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+@function get-expression-operator($expression) {
+  @each $operator in ('>=', '>', '<=', '<', '≥', '≤') {
+    @if str-index($expression, $operator) {
+      @return $operator;
+    }
+  }
+
+  $_: im-log('No operator found in `#{$expression}`.');
+}
+
+@function get-expression-dimension($expression, $operator) {
+  $operator-index: str-index($expression, $operator);
+  $parsed-dimension: str-slice($expression, 0, $operator-index - 1);
+  $dimension: 'width';
+
+  @if str-length($parsed-dimension) > 0 {
+    $dimension: $parsed-dimension;
+  }
+
+  @return $dimension;
+}
+
+@function get-expression-prefix($operator) {
+  @return if(index(('<', '<=', '≤'), $operator), 'max', 'min');
+}
+
+@function get-expression-value($expression, $operator) {
+  $operator-index: str-index($expression, $operator);
+  $value: str-slice($expression, $operator-index + str-length($operator));
+
+  @if map-has-key($breakpoints, $value) {
+    $value: map-get($breakpoints, $value);
+  } @else {
+    $value: to-number($value);
+  }
+
+  $interval: map-get($unit-intervals, unit($value));
+
+  @if not $interval {
+    $_: im-log('Unknown unit `#{unit($value)}`.');
+  }
+
+  @if $operator == '>' {
+    $value: $value + $interval;
+  } @else if $operator == '<' {
+    $value: $value - $interval;
+  }
+
+  @return $value;
+}
+
+
+@function parse-expression($expression) {
+  @if map-has-key($media-expressions, $expression) {
+    @return map-get($media-expressions, $expression);
+  }
+
+  $operator: get-expression-operator($expression);
+  $dimension: get-expression-dimension($expression, $operator);
+  $prefix: get-expression-prefix($operator);
+  $value: get-expression-value($expression, $operator);
+
+  @return '(#{$prefix}-#{$dimension}: #{$value})';
+}
+
+@function slice($list, $start: 1, $end: length($list)) {
+  @if length($list) < 1 or $start > $end {
+    @return ();
+  }
+
+  $result: ();
+
+  @for $i from $start through $end {
+    $result: append($result, nth($list, $i));
+  }
+
+  @return $result;
+}
+
+@mixin media($conditions...) {
+  @if ($im-media-support and length($conditions) == 0) or
+      (not $im-media-support and im-intercepts-static-breakpoint($conditions...)) {
+    @content;
+  } @else if ($im-media-support and length($conditions) > 0) {
+    @media #{unquote(parse-expression(nth($conditions, 1)))} {
+      // Recursive call
+      @include media(slice($conditions, 2)...) {
+        @content;
+      }
+    }
+  }
+}

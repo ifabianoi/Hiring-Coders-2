@@ -1,0 +1,34 @@
+.minicartSummary {
+    background-color: #424242;
+}
+
+.minicartTitle {
+    background-color: #424242;
+    
+    color: #fff;
+}
+
+.summarySmallContent {
+    color: #fff;
+}
+
+.price {
+    color: #fff;
+}
+
+.summaryItemLabel {
+    color: #fff;
+}
+
+.cartIcon {
+    color: #fff;
+    width: 300px;
+}
+
+.drawer {
+    background-color: #424242;
+}
+
+.closeIcon {
+    color: #fff;
+}

@@ -1,0 +1,29 @@
+{
+  "store.home": {
+    "blocks": [
+      /*
+      * Componente Tab Layout para separar os produtos por categoria
+      */
+      "tab-layout#home",
+      
+      /*
+      * Blocos de estilo gambiarra para inserir o footer fixo
+      */
+      "flex-layout.row#RowFooter",
+      "rich-text"
+    ]
+  },
+  "flex-layout.row#RowFooter": {
+    "props": {}
+  },
+  "rich-text": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "__",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "help-message"
+    }
+  }
+}

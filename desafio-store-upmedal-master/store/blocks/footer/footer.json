@@ -1,0 +1,157 @@
+{
+  "footer": {
+    "blocks": [
+      "footer-layout.desktop",
+      "footer-layout.mobile"
+    ]
+  },
+  "footer-layout.desktop": {
+    "children": [
+      "flex-layout.row#footer"
+    ]
+  },
+  "footer-layout.mobile": {
+    "children": [
+      "flex-layout.row#footer"
+    ]
+  },
+  "flex-layout.row#footer": {
+    "props": {
+      "blockClass": "footer",
+      "fullWidth": true,
+      "horizontalAlign": "center",
+      "verticalAlign": "top",
+      "preserveLayoutOnMobile": true,
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": false,
+      "colSizing": "equal"
+    },
+    "children": [
+      "flex-layout.col#login",
+      "flex-layout.col#challenge",
+      "flex-layout.col#cart",
+      "flex-layout.col#suporte",
+      "flex-layout.col#promocao"
+    ]
+  },
+  "flex-layout.col#login": {
+    "props": {
+      "horizontalAlign": "center"
+    },
+    "children": [
+      "image#login",
+      "rich-text#login"
+    ]
+  },
+  "image#login": {
+    "props": {
+      "src": "assets/icons/login.svg",
+      "link": "/login"
+    }
+  },
+  "rich-text#login": {
+    "props": {
+      "text": "ENTRAR",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "icontext"
+    }
+  },
+  "flex-layout.col#challenge": {
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center"
+    },
+    "children": [
+      "image#challenge",
+      "rich-text#challenge"
+    ]
+  },
+  "image#challenge": {
+    "props": {
+      "src": "assets/icons/challenge.svg",
+      "link": "/"
+    }
+  },
+  "rich-text#challenge": {
+    "props": {
+      "text": "DESAFIOS",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "icontext"
+    }
+  },
+  "flex-layout.col#cart": {
+    "props": {
+      "horizontalAlign": "center"
+    },
+    "children": [
+      "image#cart",
+      "rich-text#cart"
+    ]
+  },
+  "image#cart": {
+    "props": {
+      "src": "assets/icons/cart.svg",
+      "link": "/"
+    }
+  },
+  "rich-text#cart": {
+    "props": {
+      "text": "LOJA",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "icontext"
+    }
+  },
+  "flex-layout.col#suporte": {
+    "props": {
+      "horizontalAlign": "center"
+    },
+    "children": [
+      "whatsappfabiano",
+      "rich-text#suporte"
+    ]
+  },
+  "whatsappfabiano":{
+    "props":{
+        "title": "WhatsApp",
+        "url": "https://api.whatsapp.com/send?phone=556232272422&text=Ol%C3%A1!%20Estou%20no%20Hiring%20Coders%20e%20preciso%20de%20sua%20ajuda!",
+        "icon": "assets/icons/whatsapp.svg"
+    }
+  },
+  "rich-text#suporte": {
+    "props": {
+      "text": "SUPORTE",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "blockClass": "icontext"
+    }
+  },
+  "flex-layout.col#promocao": {
+    "props": {
+      "horizontalAlign": "center"
+    },
+    "children": [
+      "image#promocao",
+      "link#promocao"
+    ]
+  },
+  "image#promocao": {
+    "props": {
+      "src": "assets/icons/newsletter.svg",
+      "link": "https://ifabianoistore--hiringcoders2021.myvtex.com/leads"
+    }
+  },
+  "link#promocao": {
+    "props": {
+      "displayMode": "button",
+      "buttonProps": {
+        "variant": "primary",
+        "size": "small"
+      },
+      "href": "/leads",
+      "label": "PROMOÇÕES"
+    }
+  }
+}

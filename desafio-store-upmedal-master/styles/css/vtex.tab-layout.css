@@ -1,0 +1,10 @@
+.listContainer {
+    background-color: #212121;
+    margin-bottom: 0px;
+}
+
+.listItemActive :global(.vtex-button){
+    border:  none;
+    border-radius: 0;
+    border-bottom: medium solid #59ff00;
+}

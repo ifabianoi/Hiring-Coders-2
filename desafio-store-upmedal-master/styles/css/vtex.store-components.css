@@ -1,0 +1,41 @@
+.Container {
+    background-color: #424242;
+}
+
+.searchBarContainer :global(.vtex-input-prefix__group) {
+    background-color: #212121;
+    border: none;
+	border-radius: 0;
+    width: 500px;
+	border-bottom: 2px solid #59ff00;
+}
+
+.shippingContainer :global(.vtex-input-prefix__group) {
+    background-color: #212121;
+    border: none;
+	border-radius: 0;
+	border-bottom: 2px solid #59ff00;
+}
+
+.searchIcon {
+    color: #ffffff;
+}
+
+.imageElement--carousel {
+    padding-left: 5%;    
+    padding-right: 5%;    
+    border-color: #303030;
+    background-color: #303030;
+}
+
+.productBrand {
+    color: #fff;
+}
+
+.productDescriptionTitle {
+    color: #fff;
+}
+
+.content {
+    color: #fff;
+}

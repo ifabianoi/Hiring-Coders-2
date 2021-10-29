@@ -1,0 +1,180 @@
+{
+    "tab-layout#home": {
+        "children": [
+            //Tab List para separar os produtos por categoria
+            "tab-list#home",
+            /*
+           * Bloco list-context chamando o child slider layout 
+           * dos produtos em destaque
+           */
+            "list-context.image-list#upmedal",
+            //Tab Content para chamar os produtos conforme seleção do menu
+            "tab-content#home"
+        ],
+        "props": {
+            "blockClass": "home",
+            "defaultActiveTabId": "promocao"
+        }
+    },
+    "tab-list#home": {
+        "children": [
+            "tab-list.item#promocao",
+            "tab-list.item#corinthians",
+            "tab-list.item#palmeiras",
+            "tab-list.item#signos",
+            "tab-list.item#divertidos",
+            "tab-list.item#maravilhas",
+            "tab-list.item#guerreiros"
+        ]
+    },
+
+    "tab-list.item#promocao": {
+        "props": {
+            "tabId": "promocao",
+            "label": "PROMOÇÕES"
+        }
+    },
+
+    "tab-list.item#corinthians": {
+        "props": {
+            "tabId": "corinthians",
+            "label": "CORINTHIANS"
+        }
+    },
+
+    "tab-list.item#palmeiras": {
+        "props": {
+            "tabId": "palmeiras",
+            "label": "PALMEIRAS"
+        }
+    },
+
+    "tab-list.item#signos": {
+        "props": {
+            "tabId": "signos",
+            "label": "SIGNOS"
+        }
+    },
+
+    "tab-list.item#divertidos": {
+        "props": {
+            "tabId": "divertidos",
+            "label": "DIVERTIDOS"
+        }
+    },
+
+    "tab-list.item#maravilhas": {
+        "props": {
+            "tabId": "maravilhas",
+            "label": "7Maravilhas"
+        }
+    },
+
+    "tab-list.item#guerreiros": {
+        "props": {
+            "tabId": "guerreiros",
+            "label": "GUERREIROS"
+        }
+    },
+    
+    "tab-content#home": {
+        "children": [
+            "tab-content.item#promocao",
+            "tab-content.item#corinthians",
+            "tab-content.item#palmeiras",
+            "tab-content.item#signos",
+            "tab-content.item#divertidos",
+            "tab-content.item#maravilhas",
+            "tab-content.item#guerreiros"
+        ]
+    },
+    "tab-content.item#promocao": {
+        "children": [
+            "list-context.product-list#upmedal"
+        ],
+        "props": {
+            "tabId": "promocao"
+        }
+    },
+    "list-context.product-list#upmedal": {
+        "blocks": [
+            "product-summary.shelf"
+        ],
+        "children": [
+            "slider-layout#products"
+        ],
+        "props": {
+            "category": "20",
+            "hideUnavailableItems": true,
+            "blockClass": "products"
+        }
+    },
+    "slider-layout#products": {
+        "props": {
+            "itemsPerPage": {
+                "desktop": 3,
+                "tablet": 2,
+                "phone": 2
+            },
+            "infinite": true,
+            "fullWidth": false,
+            "blockClass": "products",
+            "autoplay": {
+                "timeout": 5000,
+                "stopOnHover": true
+            }
+        }
+    },
+
+    "tab-content.item#corinthians": {
+        "children": [
+            "search-result-layout.customQuery#Corinthians"
+        ],
+        "props": {
+            "tabId": "corinthians"
+        }
+    },
+
+    "tab-content.item#palmeiras": {
+        "children": [
+            "search-result-layout.customQuery#Palmeiras"
+        ],
+        "props": {
+            "tabId": "palmeiras"
+        }
+    },
+
+    "tab-content.item#signos": {
+        "children": [
+            "list-context.product-list#upmedal"
+        ],
+        "props": {
+            "tabId": "signos"
+        }
+    },
+
+    "tab-content.item#divertidos": {
+        "children": [
+            "list-context.product-list#upmedal"
+        ],
+        "props": {
+            "tabId": "divertidos"
+        }
+    },
+    "tab-content.item#maravilhas": {
+        "children": [
+            "list-context.product-list#upmedal"
+        ],
+        "props": {
+            "tabId": "maravilhas"
+        }
+    },
+    "tab-content.item#guerreiros": {
+        "children": [
+            "list-context.product-list#upmedal"
+        ],
+        "props": {
+            "tabId": "guerreiros"
+        }
+    }
+}
